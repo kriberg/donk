@@ -1,4 +1,3 @@
-import os
 import typing as t
 
 import click
@@ -84,4 +83,4 @@ class TomlFilePath(click.Path):
         write_module_version = self.config.get("write_module_version")
         if write_module_version:
             with open(write_module_version, "w") as fp:
-                fp.write(f"__version__ = \"{self.version}\"\n")
+                fp.write(f'__version__ = "{self.version}"\n')

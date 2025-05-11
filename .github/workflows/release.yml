@@ -45,16 +45,16 @@ jobs:
       - name: Bump major version
         if: ${{ inputs.bump_major_version }}
         run: |
-          python -m donk major
+          uv run -m donk major
       - name: Bump minor version
         if: ${{ inputs.bump_minor_version }}
         run: |
-          python -m donk minor
+          uv run -m donk minor
 
       - name: Bump patch version
         if: ${{ !(inputs.bump_major_version || inputs.bump_minor_version) }}
         run: |
-          python -m donk patch
+          uv run -m donk patch
 
       - name: Build package
         run: |
@@ -68,7 +68,7 @@ jobs:
           git add -u
           git commit -m "chore: bump version"
           git push
-          git tag -f "$(python -m donk show)"
+          git tag -f "$(uv run -m donk show)"
           git push --tags
 
       - name: Publish to PyPI

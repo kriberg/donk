@@ -1,6 +1,6 @@
 [project]
 name = "donk"
-version = "1.0.2"
+version = "1.1.0"
 description = "donk is a minimal version management tool for pyproject.toml files"
 readme = "README.md"
 requires-python = ">=3.10"

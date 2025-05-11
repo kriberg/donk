@@ -76,4 +76,4 @@ jobs:
         env:
           TWINE_REPOSITORY: pypi
         run: |
-          python -m twine upload dist/*
+          uv run -m twine upload dist/*
